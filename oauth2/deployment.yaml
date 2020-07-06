@@ -16,11 +16,6 @@
 # httpbin service
 ##################################################################################################
 apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: httpbin
----
-apiVersion: v1
 kind: Service
 metadata:
   name: httpbin
@@ -50,7 +45,7 @@ spec:
         app: httpbin
         version: v1
     spec:
-      serviceAccountName: httpbin
+      serviceAccountName: httpbin-v2
       containers:
       - image: docker.io/kennethreitz/httpbin
         imagePullPolicy: IfNotPresent
